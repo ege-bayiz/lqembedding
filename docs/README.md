@@ -1,6 +1,6 @@
-## Linear-Quadratic Embedding of Finite Dynamic Games
+# Linear-Quadratic Embedding of Finite Dynamic Games
 
-### Introduction
+## Introduction
 
 In finite discrete-time dynamic games with large number of players or large number of available actions per player, finding optimal play often requires expensive searching algorithms. This can get prohibitively expensive for many real life applications. On the contrary, many smooth games encountered in the real world can be approximately solved efficiently. Of such smooth games, Linear Quadratic (LQ) games, are one of the most well studied due to their simplicity and ability to approximate many dynamic games encountered in the real world. In this project we investigate the feasibility of embedding a discrete game with finite states and player actions into an LQ game with continuous state and action spaces, and by solving this LQ game, generate near optimal strategies for the finite game we originally had.
 
