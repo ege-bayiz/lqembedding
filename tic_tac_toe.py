@@ -1,9 +1,10 @@
 import colorama
+from collections import deque
 
 class Board():
     def __init__(self, m: int = 3, n: int = 3, k: int = 3):
-        self.p1moves = set()
-        self.p2moves = set()
+        self.p1moves = list()
+        self.p2moves = list()
         self.m = m  #num of rows
         self.n = n  #num of columns
         self.k = k  #winning number (k-in-a-row wins the game)
@@ -15,6 +16,16 @@ class Board():
         self.round = 0
         colorama.init()
         colorama.deinit()
+
+    def copy(self):
+        b = Board(self.m, self.n, self.k)
+        b.p1moves = self.p1moves.copy()
+        b.p2moves = self.p2moves.copy()
+        b.winner = self.winner
+        b.game_over = self.game_over
+        b.turn = self.turn
+        b.round = self.round
+        return b
 
     def draw(self):
         colorama.reinit()
@@ -48,10 +59,10 @@ class Board():
         assert not self.game_over
         assert self.has_empty_slot_at(row, col)
         if self.turn == "p1":
-            self.p1moves.add((row, col))
+            self.p1moves.append((row, col))
             self.turn = "p2"
         else:
-            self.p2moves.add((row, col))
+            self.p2moves.append((row, col))
             self.turn = "p1"
             self.round += 1
         self.update_game_over()
@@ -145,4 +156,48 @@ class Board():
         if row < 0 or col < 0:
             return False
         return True
+
+    def equivalent_to(self, other):
+        if self.p1moves == other.p1moves and self.p2moves == other.p2moves:
+            return True
+        return False
+
+    def get_available_move_list(self):
+        moves = list()
+        for row in range(self.m):
+            for col in range(self.n):
+                if (row, col) not in self.p1moves and (row, col) not in self.p2moves:
+                    moves.append((row, col))
+
+        return moves
+
+"""
+    def get_game_states(self):
+        states_map = dict() #maps index to state
+        inv_states_map = dict() #maps state to index
+
+
+        stack = deque()
+        board = Board(self.m, self.n, self.k)
+        stack.append(board)
+        idx = 0
+        states_map[idx] = (list(board.p1moves), list(board.p2moves))
+        inv_states_map[(board.p1moves, board.p2moves)] = idx
+
+        while not len(stack) == 0:
+            b = stack.pop()
+            for row in range(self.m):
+                for col in range(self.n):
+                    if b.has_empty_slot_at(row, col) and not b.game_over:
+                        b_new = b.copy()
+                        if (b_new.p1moves, b_new.p2moves) in inv_states_map:
+                            b_new.play_move(row, col)
+                            stack.append(b_new)
+                            idx += 1
+
+                            states_map[idx] = b_new
+                            inv_states_map[b_new] = idx
+
+        return states_map, inv_states_map
+"""
 
