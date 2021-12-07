@@ -1,5 +1,11 @@
 # Linear-Quadratic Embedding of Finite Dynamic Games #
 ## Results ##
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
 We have used Python for the experiments. Below are the empirical results to give evidence to our claim that the tic-tac-toe game is not LQ embeddable.
 
 For our results we have first implemented a simple terminal based tic-tac-toe game. Here the player 1 plays X's and player 2 plays O's and the first player who can get three in a row, diagonals included, wins the game. If all cells are filled up and there are no winners, the game is drawn. In our implementation a human player can input moves by pressing the key in the keypad corresponding to the cell in the 3 by 3 tic-tac-toe grid. Here is an example board for the tic-tac-toe game.
@@ -19,7 +25,7 @@ The performance of the trained network against a true MCTS algorithm yielded aby
 In the previous section we have shown that the tic-tac-toe is linearly embeddable. However, we were unable to show that it is also LQ embeddable. In this section we provide evidence for tic-tac-toe not being LQ embeddable. To do this, we show that the game rewards of the tic-tac-toe are not separable using ellipsoids. This means that there are no quadratic form
 
 $$
-c_i(t, x, u_1, \dots, u_N) = \frac{1}{2}\bigg(f(x)^\top Q_t^i f(x)
+c_i(t, x, u_1, \dots, u_N) = \frac{1}{2} f(x)^\top Q_t^i f(x)
 $$
 
 which is approximately consistent with the finite game rewards. Notice that we have excluded the control rewards from the above expression since the rewards of tic-tac-toe (win = +1, lose = -1, neither win nor lose = 0) are only dependent on game states.
@@ -30,4 +36,9 @@ We have simulate 10000 games using the simple tic-tac-toe embedding we have desc
 As can be seen in the above plot, the state rewards do not seem to be quadratically separable, since the no-winner states cannot be separated from the other states.
 
 ---
+We do a similar analysis using the embedding obtained by the previous neural network (shown below). Again as can be seen in the above plot, the state rewards do not seem to be quadratically separable. Since neither the neural network nor the simple embedding we found shows any quadratic separability, the tic-tac-toe is probably not LQ embeddable.
 ![PCA plot of the semi-one-hot embedding](assets/images/PCA2_NN.png)
+
+[Previous page](chapter1.md) |
+
+[Home](README.md)
