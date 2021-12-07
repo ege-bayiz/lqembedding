@@ -7,7 +7,7 @@
 In this project we wish to investigate solving finite dynamic games with smooth dynamic game solution methods by embedding the finite dynamic game into a smooth LQ feedback game. That is, given an $N$-player finite dynamic game with \\(X)\\, the set of game states, and $U^i$, a finite set of controls available to player $i$, we wish to find injective mappings \\(f: X \rightarrow \mathbb{R}^n)\\, \\(g^i: U^i \rightarrow \mathbb{R}^{m_i}$ and some linear state transition rule
 
 $$
-    \hat{\x}_{t + 1} = \mathbf{A}_t\hat{\mathbf{x}}_t + \sum_i ^ N \mathbf{B}_t^i\hat{\mathbf{u}}_t^i \quad \textrm{where} \quad \hat{\mathbf{x}}_t \in \mathbb{R}^n,\; \hat{\mathbf{u}}_t \in \mathbb{R}^{m_i},
+    \hat{\mathbf{x}}_{t + 1} = \mathbf{A}_t\hat{\mathbf{x}}_t + \sum_i ^ N \mathbf{B}_t^i\hat{\mathbf{u}}_t^i \quad \textrm{where} \quad \hat{\mathbf{x}}_t \in \mathbb{R}^n,\; \hat{\mathbf{u}}_t \in \mathbb{R}^{m_i},
 $$
 
 such that
