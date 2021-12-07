@@ -1,5 +1,5 @@
 # Linear-Quadratic Embedding of Finite Dynamic Games #
-## Analysis ##
+## Results ##
 This is a sample results section.
 
-![PCA plot of the semi-one-hot embedding](/lqembedding/docs/assets/PCA.png)
+![PCA plot of the semi-one-hot embedding](assets/images/PCA.png)
