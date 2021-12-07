@@ -1,3 +1,3 @@
 # Linear-Quadratic Embedding of Finite Dynamic Games #
 ## Analysis ##
-This is a sample analysis.
+This is a sample results section.
