@@ -1,7 +1,7 @@
 # Linear-Quadratic Embedding of Finite Dynamic Games #
 
 ## Abstract ##
-We consider the problem of embedding a finite dynamic game into a linear-quadratic-game. We rigorously define the LQ embedding of a finite dynamic game and develop a partial characterization of when an finite game can be LQ embedded.  We also provide empirical analysis to show that an example game, tic-tac-toe is not LQ embeddable.
+We consider the problem of embedding a finite dynamic game into a linear-quadratic-game. We rigorously define the LQ embedding of a finite dynamic game and develop a partial characterization of when an finite game can be LQ embedded.  We also provide empirical analysis to show that an example game, tic-tac-toe is not LQ embeddable. Our analysis shows that a significant class of finite dynamic games are not linearly embeddable, and among all games which are linearly embeddable there are games which are not LQ embeddable.
 
 ## Introduction ##
 In finite discrete-time dynamic games with large number of players or large number of available actions per player, finding optimal play often requires expensive searching algorithms. This can get prohibitively expensive for many real life applications. On the contrary, many smooth games encountered in the real world can be approximately solved efficiently. Of such smooth games, Linear Quadratic (LQ) games, are one of the most well studied due to their simplicity and ability to approximate many dynamic games encountered in the real world. In this project we investigate the feasibility of embedding a discrete game with finite states and player actions into an LQ game with continuous state and action spaces, and by solving this LQ game, generate near optimal strategies for the finite game we originally had.

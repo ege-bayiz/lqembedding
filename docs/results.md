@@ -30,7 +30,7 @@ $$
 
 which is approximately consistent with the finite game rewards. Notice that we have excluded the control rewards from the above expression since the rewards of tic-tac-toe (win = +1, lose = -1, neither win nor lose = 0) are only dependent on game states.
 
-We have simulate 10000 games using the simple tic-tac-toe embedding we have described in the previous section. We have then colored each point corresponding to an embedded game state with the winner associated with that state, and then projected the resulting points into the two axes which show largest covarience between different simulated game states. These axes are sometimes called the principle axes (See [this library](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) for more explanation on PCA analysis) The following plot is the resulting PCA plot.
+We have simulate 10000 games using the simple tic-tac-toe embedding we have described in the previous section. We have then colored each point corresponding to an embedded game state with the winner associated with that state, and then projected the resulting points into the two axes which show largest covariance between different simulated game states. These axes are sometimes called the principle axes (See [this library](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) for more explanation on PCA analysis) The following plot is the resulting PCA plot.
 ![PCA plot of the semi-one-hot embedding](assets/images/PCA2.png)
 
 As can be seen in the above plot, the state rewards do not seem to be quadratically separable, since the no-winner states cannot be separated from the other states.

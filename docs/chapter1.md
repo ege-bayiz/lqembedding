@@ -10,8 +10,11 @@ Not all games are linear embeddable. In fact most games are not. In this chapter
 Suppose that the our game has finite state space $$X$$ and suppose that $$a,b,c,d,e,\in X$$. Now suppose that this game has distinct actions $$u,v\in U = \prod_i U^i$$. Then if we have the following dynamics:
 
  $$a \rightarrow^u b$$
+
  $$c \rightarrow^u b$$
+
  $$a \rightarrow^v d$$
+
  $$c \rightarrow^v e$$
 
 Then the game is not linearly embeddable since if it were, the first two dynamics above would yield
@@ -55,7 +58,6 @@ $$
 The reason one-hot embeddability implies LQ embeddability in the above scenario is that choosing $$Q_t = diag(c_i(t, x, u_1, \dots, u_N))$$ always satisfies the above equation.
 
 Note that the converse need not be always true. And LQ embeddability does not imply one-hot embeddability. The below figure gives a concise summary of the implication hierarchy of the separate embeddability classes we have discussed so far.
-
 
 ![](assets/images/Hierarchy.png)
 
